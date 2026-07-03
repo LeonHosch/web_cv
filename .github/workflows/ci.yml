@@ -1,0 +1,27 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    name: Code Linting
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Stylelint
+      run: |
+        npm init -y
+        npm install --save-dev stylelint stylelint-config-standard
+
+    - name: Run Stylelint
+      run: npx stylelint "src/frontend/**/*.css"
