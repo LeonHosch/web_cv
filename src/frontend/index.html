@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to My Timeline</title>
+  <link rel="stylesheet" href="timeline/timeline.css" />
+  <style>
+    .landing {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .landing-card {
+      max-width: 560px;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      animation: movedownbox 1s linear forwards;
+    }
+
+    .landing-card h1 {
+      color: #2e364a;
+      margin-bottom: 12px;
+      font-size: 2rem;
+    }
+
+    .landing-card p {
+      color: #4b5563;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .landing-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #2e364a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .landing-btn:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <main class="landing">
+    <section class="landing-card">
+      <h1>Welcome to My Timeline</h1>
+      <p>Explore my journey, highlights, and milestones in a clean and polished timeline view.</p>
+      <a class="landing-btn" href="timeline/timeline.html">View Timeline</a>
+    </section>
+  </main>
+</body>
+</html>
