@@ -1,0 +1,161 @@
+/* --- MAIN HEADER --- */
+.main-header {
+    width: 100%;
+    background: #242b3c; /* Etwas dunkler als dein Body (#2e364a) für schönen Kontrast */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;    /* Header bleibt beim Scrollen oben am Bildschirm kleben */
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between; /* Schiebt Logo nach links, Navigation nach rechts */
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #a0aec0; /* Subtiles Grau für den Nachnamen */
+    font-weight: 400;
+}
+
+/* Navigations-Links */
+.nav-menu {
+    display: flex;
+    gap: 30px; /* Erzeugt vollautomatisch den perfekten Abstand zwischen den Links */
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Hover-Effekt: Link wird hellweiß */
+.nav-link:hover {
+    color: white;
+}
+
+/* Aktiver Zustand (Unterstreichung der aktuellen Seite) */
+.nav-link.active {
+    color: white;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white; /* Eleganter weißer Strich unter dem aktiven Link */
+    border-radius: 2px;
+}
+
+/* Mobile Optimierung (bis 600px wie deine Timeline) */
+@media screen and (max-width: 600px) {
+    .header-container {
+        flex-direction: column; /* Stapelt Logo und Links untereinander auf Smartphones */
+        gap: 15px;
+        padding: 0 25px;
+    }
+    
+    .nav-menu {
+        gap: 20px; /* Auf Handys etwas enger zusammenrücken */
+    }
+}
+
+/* --- SPRACHEN DROPDOWN --- */
+
+/* Der Container, der den Button und den Inhalt hält */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Der Dropdown-Button selbst */
+.dropbtn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover-Effekt für den Button */
+.lang-dropdown:hover .dropbtn {
+    color: white;
+}
+
+/* Die Box mit den ausklappbaren Links (Standardmäßig unsichtbar) */
+.dropdown-content {
+    display: none;            /* Versteckt das Menü */
+    position: absolute;
+    right: 0;                 /* Richtet das Menü an der rechten Kante des Buttons aus */
+    background-color: #242b3c;/* Gleiche Farbe wie der Header */
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3); /* Subtiler Schatten für Tiefenwirkung */
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1100;            /* Liegt über allem anderen */
+    margin-top: 5px;
+}
+
+/* Die Links innerhalb des Dropdowns */
+.dropdown-content a {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover-Effekt für die einzelnen Sprachen im Menü */
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+/* DAS GEHEIMNIS: Zeigt das Dropdown an, wenn man über den Container hovert */
+.lang-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Mobile Anpassung (für dein bestehendes @media-Query) --- */
+@media screen and (max-width: 600px) {
+    .dropdown-content {
+        position: static;     /* Hebt die absolute Positionierung auf Handys auf */
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 15px;   /* Rückt die Sprachen leicht ein */
+        min-width: auto;
+    }
+    
+    /* Auf Handys kann das Menü direkt dauerhaft offen oder leichter lesbar untereinander stehen */
+    .lang-dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
