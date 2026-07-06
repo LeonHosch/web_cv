@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #2e364a;
+}
+
+.std-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 10px 20px;       /* Mehr Freiraum an den Seiten wirkt edler */
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Macht den Hover-Effekt geschmeidig */
+}
+
+/* Der Hover-Effekt: Füllt sich elegant weiß, wenn man drüberfährt */
+.std-btn:hover {
+    background: white;
+    color: #2e364a;           /* Textfarbe wechselt zur Hintergrundfarbe */
+}
